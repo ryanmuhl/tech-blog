@@ -7,6 +7,11 @@
     --border-radius: .3rem;
   }
 
+  body {
+
+        background-color: var(--secondary);
+  }
+
 .navbar {
     
     background-color: var(--dark);
@@ -30,6 +35,32 @@
   .navbar-brand a {
     color: var(--secondary);
   }
+  .blog-posts {
+    background-color: var(--secondary);
+    border-style: solid;
+  }
 
+  .post-title {
+    background-color: var(--dark);
+    color: var(--secondary);
+    
+  }
 
+  .blog-entry {
+    color: var(--dark);
+  }
+  .sign-in {
+    background-color: var(--secondary);
+    border-style: solid;
+  }
+
+  .sign-in-button {
+    background-color: var(--dark);
+    color: var(--secondary);
+  }
+
+  .login-title {
+    background-color: var(--dark);
+    color: var(--secondary);
+  }
  
