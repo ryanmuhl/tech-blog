@@ -1,0 +1,36 @@
+:root {
+    --primary: #ccdad1;
+    --secondary: #9caea9;
+    --tertiary: #788585;
+    --light-dark: #6f6866;
+    --dark: #38302e;
+    --border-radius: .3rem;
+  }
+
+.navbar {
+
+    background-color: var(--dark);
+
+  }
+
+  .main-title {
+    color: var(--dark);
+    background-color: var(--secondary);
+    box-shadow: 8px 8px var(--light-dark);
+    border-radius:5px;
+  }
+
+  .navbar-brand a {
+    color: var(--secondary);
+  }
+
+  .hero {
+
+    background-color: var(--dark);
+    height: 150px;
+
+  }
+
+  .hero div {
+      width: 350px;
+  }
