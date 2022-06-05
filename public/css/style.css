@@ -8,12 +8,19 @@
   }
 
 .navbar {
-
+    
     background-color: var(--dark);
 
   }
 
-  .main-title {
+  
+.tech-hero {
+    
+    background-color: var(--dark);
+
+  }
+
+  .tech-title {
     color: var(--dark);
     background-color: var(--secondary);
     box-shadow: 8px 8px var(--light-dark);
@@ -24,13 +31,5 @@
     color: var(--secondary);
   }
 
-  .hero {
 
-    background-color: var(--dark);
-    height: 150px;
-
-  }
-
-  .hero div {
-      width: 350px;
-  }
+ 
