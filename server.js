@@ -3,6 +3,7 @@ const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
 const helpers = require('./utils/helpers');
+const routes = require("./controllers/");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -16,7 +17,9 @@ const sess = {
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
-    db: sequelize
+    db: sequelize,
+    checkExpirationInterval: 1000 * 60 * 10, // will check every 10 minutes
+    expiration: 1000 * 60 * 30 // will expire after 30 minutes
   })
 };
 
@@ -31,7 +34,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use(require('./controllers/'));
+app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
