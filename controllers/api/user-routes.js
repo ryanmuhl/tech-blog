@@ -51,13 +51,13 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const dbUserData = await User.create({
-      username: req.body.username,
+      user_name: req.body.user_name,
       password: req.body.password,
     });
 
     req.session.save(() => {
         req.session.user_id = dbUserData.id;
-        req.session.username = dbUserData.username;
+        req.session.user_name = dbUserData.user_name;
         req.session.loggedIn = true;
 
       res.status(200).json(dbUserData);
@@ -71,10 +71,11 @@ router.post('/', async (req, res) => {
 
 // POST / (login User) http://localhost:3001/api/user/login
 router.post('/login', async (req, res) => {
+  console.log("data: ", req.body)
   try {
     const dbUserData = await User.findOne({
       where: {
-        username: req.body.username,
+        user_name: req.body.user_name,
 
       },
     });
@@ -97,8 +98,7 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
-      req.session.user_id = dbUserData.id
-      req.session.username = dbUserData.username;
+
 
       res
         .status(200)
