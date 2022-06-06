@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const res = require('express/lib/response');
 const { User, Post, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
@@ -31,7 +32,6 @@ router.get('/', async (req, res) => {
   //Get post by id http://localhost:3001/api/post/id
 router.get('/:id', async (req, res) => {
     Item.findOne({
-  
       where: {
         id: req.params.id
       },
@@ -43,7 +43,7 @@ router.get('/:id', async (req, res) => {
         },
         {
           model: Comment,
-          attributes: ['id', 'blog_comments', 'post_id', 'user_id', 'created_at' ],
+          attributes: ['id','post_id', 'blog_comments', 'user_id', 'created_at' ],
         include: { 
             model: User,
             attributes: ['user_name']
