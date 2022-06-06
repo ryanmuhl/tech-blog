@@ -39,4 +39,4 @@ Post.init(
     
 );
 
-module.exports = Item;
+module.exports = Post;
