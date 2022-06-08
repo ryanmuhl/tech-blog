@@ -27,7 +27,7 @@ router.get('/:id', async (req, res) => {
       {
         model: Comment,
         include: {
-            model:Post,
+          model: Post,
         }
       },
 
@@ -56,9 +56,9 @@ router.post('/', async (req, res) => {
     });
 
     req.session.save(() => {
-        req.session.user_id = dbUserData.id;
-        req.session.user_name = dbUserData.user_name;
-        req.session.loggedIn = true;
+      req.session.user_id = dbUserData.id;
+      req.session.user_name = dbUserData.user_name;
+      req.session.loggedIn = true;
 
       res.status(200).json(dbUserData);
     });

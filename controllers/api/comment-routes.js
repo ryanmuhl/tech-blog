@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const {Comment} = require('../../models');
+const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-//
+//get all comments http://localhost:3001/api/comment/
 router.get("/", (req, res) => {
     Comment.findAll()
         .then((dbCommentData) => res.json(dbCommentData))
@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
         });
 });
 
-//
+//Add comment http://localhost:3001/api/comment/
 router.post('/', withAuth, (req, res) => {
     if (req.session) {
         Comment.create(req.body)
