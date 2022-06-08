@@ -1,9 +1,8 @@
 const router = require('express').Router();
-const res = require('express/lib/response');
-const { User, Post, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
+const { User, Post, Comment } = require('../../models');
 
-// / get all posts http://localhost:3001/api/post/
+// get all posts http://localhost:3001/api/post/
 router.get('/', async (req, res) => {
     Post.findAll({
         attributes: ['id', 'content', 'title', 'created_at'],
@@ -13,10 +12,10 @@ router.get('/', async (req, res) => {
         },
         {
             model: Comment,
-            attributes: ["id", "blog_comments", "post_id", "user_id", "created_at"],
+            attributes: ['id', 'blog_comments', 'post_id', 'user_id', 'created_at'],
             include: {
                 model: User,
-                attributes: ["user_name"],
+                attributes: ['user_name'],
             },
         },
     ],
@@ -31,7 +30,7 @@ router.get('/', async (req, res) => {
 
   //Get post by id http://localhost:3001/api/post/id
 router.get('/:id', async (req, res) => {
-    Item.findOne({
+    Post.findOne({
       where: {
         id: req.params.id
       },
@@ -66,7 +65,6 @@ router.get('/:id', async (req, res) => {
 
 //add post  http://localhost:3001/api/post/
   router.post('/', withAuth, async(req, res) => {
-    req.body.user_id=req.session.userId;
     Post.create(req.body)
       .then(dbPostData => res.json(dbPostData))
       .catch(err => {
@@ -74,3 +72,5 @@ router.get('/:id', async (req, res) => {
         res.status(500).json(err);
       });
   });
+
+  module.exports = router;
