@@ -10,4 +10,24 @@ router.get("/", async (req, res) => {
     
   });
 
+  // Login route /Login  http://localhost:3001/login/
+router.get('/login', async (req, res) => {
+    // If the user is already logged in, redirect to the homepage
+    if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
+    // Otherwise, render the 'login' template
+    res.render('login');
+  });
+
+  router.get('/signup', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+
+    res.render('signup');
+});
+
   module.exports = router;
