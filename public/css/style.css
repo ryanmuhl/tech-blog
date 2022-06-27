@@ -54,6 +54,10 @@
     border-style: solid;
   }
 
+  .sign-up-link:hover {
+    color: white;
+  }
+
   .sign-in-button {
     background-color: var(--dark);
     color: var(--secondary);
@@ -63,4 +67,5 @@
     background-color: var(--dark);
     color: var(--secondary);
   }
+
  
