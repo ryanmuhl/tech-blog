@@ -20,20 +20,13 @@
         <div class="navbar-brand">
             <a href="/" class="navbar-item">HOME</a>
             {{#if loggedIn}}
+            <a href="/dashboard" class="navbar-item">DASHBOARD</a>
             <a href="/" id="logout" class="navbar-item">LOGOUT</a>
             {{else}}
             <a href="/login" class="navbar-item">LOGIN</a>
             {{/if}}
         </div>
     </nav>
-
-    <section class=" columns hero tech-hero">
-        <div class="hero-body column is-one-third">
-            <p class=" pb-2 pl-4 title tech-title">
-                The Tech Blog
-            </p>
-        </div>
-    </section>
 
     <!--Start Main Section -->
     <main>
