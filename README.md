@@ -76,7 +76,7 @@ https://github.com/ryanmuhl/tech-blog
 * To be deployed to Heroku at later date
 
 ## Screenshot
-![Challenge Screenshot](https://github.com/ryanmuhl/greater-purpose/blob/main/public/images/Screenshot.png.jpg)
+![Challenge Screenshot](https://github.com/ryanmuhl/tech-blog/blob/main/public/images/Screenshot.png.jpg)
 
 ## Contributions
 Created/Designed by:
